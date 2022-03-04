@@ -49,7 +49,7 @@ const Checkout = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     const order = {
-      name: user.name,
+      name: user?.name,
       address: address,
       pincode: pincode,
       servicePeriod: servicePeriod,
@@ -87,7 +87,7 @@ const Checkout = () => {
       </div>
       <div className="mt-6 px-4 py-4 border-gray-200 border rounded-md shadow-sm shadow-gray-200">
         <h1 className="text-2xl font-semibold">
-          {user.name}
+          {user?.name}
           <span className="text-xl font-light"> ({user.emailId})</span>
         </h1>
         <p className="mt-2 text-sm text-gray-500 tracking-wide font-light">
@@ -136,7 +136,7 @@ const Checkout = () => {
         <div className="bg-gray-100 w-full py-1 rounded-sm mt-2">
           <h1 className="mt-4  px-4 text-sm tracking-widest ">ORDER FROM</h1>
           <p className="mt-1 px-4 font-semibold tracking-wide text-base">
-            {outlet.name}
+            {outlet?.name}
           </p>
         </div>
         <div className="mt-4 px-4 ">
@@ -144,7 +144,7 @@ const Checkout = () => {
             return (
               <div className="mt-4" key={id}>
                 <div className="flex justify-between items-center">
-                  <p className="font-medium tracking-wide">{order.name}</p>
+                  <p className="font-medium tracking-wide">{order?.name}</p>
                   <div>
                     <button
                       // onClick={() => subtractHandler(name, price)}
