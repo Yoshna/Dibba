@@ -11,6 +11,7 @@ const outlets = require("./routes/outlets");
 const user = require("./routes/user");
 const order = require("./routes/order");
 const details = require("./routes/details");
+const path = require("path");
 
 mongoose
   .connect(process.env.MONGO_URI, {
@@ -36,6 +37,12 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(express.static(path.resolve(__dirname, "Client", "build")));
+
+app.get("/*", (req, res) => {
+  // res.sendFile("index.html");
+  res.sendFile(path.resolve(__dirname, "Client", "build", "index.html"));
+});
 
 app.use(cors({ origin: `${process.env.CLIENT_URL}`, credentials: true }));
 app.use((req, res, next) => {
