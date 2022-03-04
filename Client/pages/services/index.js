@@ -14,7 +14,7 @@ const Services = ({ data }) => {
   useEffect(() => {
     console.log(user);
     if (user === null) {
-      console.log(12);
+      //console.log(12);
       return router.push("/");
     }
 

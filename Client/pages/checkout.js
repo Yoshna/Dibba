@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { OrderContext, UserContext, OutletContext } from "./_app";
 import Navbar from "../components/Navbar/Navbar";
 import { useRouter } from "next/router";
@@ -9,8 +9,17 @@ const Checkout = () => {
   const { outlet } = useContext(OutletContext);
   const [address, setAddress] = useState("");
   const [pincode, setPincode] = useState("");
+  const [userData, setUserData] = useState(null);
   const [total, setTotal] = useState(orders.total);
   const [servicePeriod, setServicePeriod] = useState("1 day");
+
+  useEffect(() => {
+    if (user === null) {
+      //console.log(12);
+      return router.push("/");
+    }
+    setUserData(user);
+  }, []);
 
   const router = useRouter();
   const outletId = router.query;
@@ -49,7 +58,7 @@ const Checkout = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     const order = {
-      name: user?.name,
+      name: userData?.name,
       address: address,
       pincode: pincode,
       servicePeriod: servicePeriod,
@@ -57,7 +66,7 @@ const Checkout = () => {
       order: orders.order,
       outletId: outletId.Id,
       delivered: false,
-      userId: user._id,
+      userId: userData._id,
     };
     // try {
     console.log(pincode.length);
@@ -87,8 +96,8 @@ const Checkout = () => {
       </div>
       <div className="mt-6 px-4 py-4 border-gray-200 border rounded-md shadow-sm shadow-gray-200">
         <h1 className="text-2xl font-semibold">
-          {user?.name}
-          <span className="text-xl font-light"> ({user.emailId})</span>
+          {userData?.name}
+          <span className="text-xl font-light"> ({userData?.emailId})</span>
         </h1>
         <p className="mt-2 text-sm text-gray-500 tracking-wide font-light">
           You are securely logged in
@@ -119,7 +128,7 @@ const Checkout = () => {
           className="w-full mt-4 tracking-wide h-10 p-2 rounded-md border border-gray-200"
         >
           <option value="1 day">1 day</option>
-          {outlet.period.map((p, id) => {
+          {outlet?.period?.map((p, id) => {
             console.log(p);
             return (
               <option key={id} value={p}>
@@ -140,7 +149,7 @@ const Checkout = () => {
           </p>
         </div>
         <div className="mt-4 px-4 ">
-          {orders.order.map((order, id) => {
+          {orders?.order?.map((order, id) => {
             return (
               <div className="mt-4" key={id}>
                 <div className="flex justify-between items-center">
