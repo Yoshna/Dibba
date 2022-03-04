@@ -1,0 +1,27 @@
+{
+  "name": "dibba",
+  "private": true,
+  "proxy": "http://localhost:5000",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@cloudinary/react": "^1.0.1",
+    "@cloudinary/url-gen": "^1.5.1",
+    "autoprefixer": "^10.4.2",
+    "axios": "^0.25.0",
+    "cloudinary": "^1.28.1",
+    "next": "12.0.10",
+    "postcss": "^8.4.6",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "tailwindcss": "^3.0.18"
+  },
+  "devDependencies": {
+    "eslint": "8.8.0",
+    "eslint-config-next": "12.0.10"
+  }
+}
