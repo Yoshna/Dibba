@@ -9,7 +9,7 @@ The user can register/login using Google OAuth and can then view various outlets
 
 ## 2. Live Link
 
-Link - (https://dibba.vercel.app/)
+Link - https://dibba.vercel.app/
 
 ## 3. Screenshot of the Interface
 
