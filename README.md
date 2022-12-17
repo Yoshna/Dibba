@@ -15,5 +15,6 @@ Link - https://dibba.vercel.app/
 
 ### Landing page
 
-<h1>hello
+<h1 align="center">
+<img alt="logo" src="./Landingpage1.jpeg" width="200px"/>
 </h1>
