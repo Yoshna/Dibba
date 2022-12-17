@@ -98,7 +98,7 @@ export default function Home({ isLogin, users }) {
   );
   if (users && users.outlet.length > 0) {
     card = (
-      <Link href="/details">
+      <Link href="/details" legacyBehavior>
         <a>
           <Card
             content={{
