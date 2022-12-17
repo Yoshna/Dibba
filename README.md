@@ -8,3 +8,6 @@ The user can register/login using Google OAuth and can then view various outlets
 Link - https://dibba.vercel.app/
 ## 3. Screenshot of the Interface
 ### Landing page 
+<h1 align="center>
+<img alt="logo" src="./Landingpage1.jpeg" width="200px"/>
+</h1>
