@@ -7,8 +7,9 @@ export default function Home({ isLogin, users }) {
   const { isLogIn, setIsLogIn } = useContext(LoginContext);
   const { user, setUser } = useContext(UserContext);
   const [modal, setModal] = useState(false);
-  // console.log("cdd");
-  // console.log(users);
+  console.log("cdd");
+  console.log(users);
+  console.log(isLogin);
   useEffect(() => {
     setIsLogIn(isLogin);
     setUser(users);
