@@ -155,7 +155,7 @@ export const getServerSideProps = async (context) => {
     },
   });
   console.log(res.data);
-  // console.log("dsddf");
+  console.log("dsddf");
   if (res.data) {
     isLogin = true;
   }
