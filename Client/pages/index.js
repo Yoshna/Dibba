@@ -154,7 +154,7 @@ export const getServerSideProps = async (context) => {
       cookie: context.req.headers.cookie ? context.req.headers.cookie : null,
     },
   });
-  // console.log(res.data);
+  console.log(res.data);
   // console.log("dsddf");
   if (res.data) {
     isLogin = true;
