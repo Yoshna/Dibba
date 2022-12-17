@@ -64,6 +64,10 @@ app.use("/api/details", details);
 
 const port = process.env.PORT || 5000;
 
+app.get("/ping", (req, res) => {
+  res.json({ msg: "pong" });
+});
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
 process
