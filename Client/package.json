@@ -1,6 +1,7 @@
 {
   "name": "dibba",
   "private": true,
+  "proxy": "https://dibba.onrender.com",
   "scripts": {
     "dev": "next dev",
     "build": "next build ",
