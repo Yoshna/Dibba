@@ -72,7 +72,7 @@ const Services = ({ data }) => {
 export const getStaticProps = async () => {
   // console.log(process.env.SERVER_URL);
   const res = await axios.get(`${process.env.SERVER_URL}/api/outlets`);
-  // console.log(res.data);
+  console.log(res.data);
   return {
     props: {
       data: res.data,

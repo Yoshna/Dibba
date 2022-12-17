@@ -1,7 +1,6 @@
 {
   "name": "dibba",
   "private": true,
-  "proxy": "http://localhost:5000",
   "scripts": {
     "dev": "next dev",
     "build": "next build ",
